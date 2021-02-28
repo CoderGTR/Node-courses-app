@@ -1,0 +1,33 @@
+<h1>Cart</h1>
+<div id="cart">
+{{#if courses.length}}
+<table>
+    <thead>
+        <tr>
+            <th>Title</th>
+            <th></th>
+            <th>Quantity</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    {{#each courses}}
+        <tr>
+            <td><p>{{title}}</p></td>
+            <td><img src="{{img}}" class="materialboxed cart-img" alt="image of course"></td>
+            <td>{{count}}</td>
+            <td>
+                <button class="btn btn-small js-remove" data-id="{{id}}">Delete</button>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+
+    <p><strong>Price: <span class="price">{{price}}</span></strong></p>
+    {{else}}
+    <p>Cart is empty</p>
+    {{/if}}
+
+</div>
